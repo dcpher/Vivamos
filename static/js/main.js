@@ -22,12 +22,12 @@ function retina() {
 	if (!isRetina())
 		return;
 	
-	$("img.2x").map(function(i, image) {
+	$("img.x2").map(function(i, image) {
 		
 		var path = $(image).attr("src");
 		
-		path = path.replace(".png", "@2x.png");
-		path = path.replace(".jpg", "@2x.jpg");
+		path = path.replace(".png", "@x2.png");
+		path = path.replace(".jpg", "@x2.jpg");
 		
 		$(image).attr("src", path);
 	});

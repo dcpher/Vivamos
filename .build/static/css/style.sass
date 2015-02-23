@@ -1,6 +1,7 @@
 // Foundation framework
-@import foundation
-  
+@import components/foundation
+@import components/mixins
+@import components/font
   
 // Colours
 $vivamos-orange: #fdbe5b
@@ -11,22 +12,32 @@ $vivamos-grey: #4d473b
 $vivamos-white: #FFF
 
 // Header Styles
-.header-content
-  //background-color: $vivamos-cream
-  
-  #header
-    padding-top: rem-calc(40)
-    padding-bottom: rem-calc(60)
+.header-content, .content-panel
+  padding-top: rem-calc(40)
+  padding-bottom: rem-calc(40)
       
   p.highlight
     font-size: rem-calc(24)
     line-height: 1.1
   
+.header-content
+  min-height: 500px
+  background-image: url(/static/images/hero-vivamos-full.jpg)
+  background-repeat: no-repeat
+  background-position: right top
+  background-size: cover
+  
+  .logo
+    margin-bottom: rem-calc(32)
+  
 // Form Styles
 
 .competition-form
-  //background-color: $vivamos-white
+  //+border-radius(16px)
   padding: rem-calc(20)
+  border: 1px dashed darken($vivamos-teal, 10%)
+  margin-bottom: rem-calc(24)
+    
 
 // Footer Styles
 .footer 
@@ -41,6 +52,13 @@ div
     text-align: right
   &.centered
     text-align: center
+      
+// content text colour   
+div, p, h1, h2, h3, h4, h5
+  &.light
+    color: $vivamos-white
+  &.dark
+    color: $vivamos-grey
   
 // coloured content boxes
 
@@ -57,3 +75,61 @@ div
     background-color: $vivamos-grey
   &.white
     background-color: $vivamos-white
+    
+// Buttons Styles
+.button
+  +border-radius(4px)
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1)
+  cursor: pointer
+    
+  &.middle
+    margin-top: 5%
+
+  // Button colours  
+ 
+  &.orange
+    +gradient-button(darken($vivamos-orange, 10%))
+    border: 1px solid darken($vivamos-orange, 20%)
+    &:hover 
+      +gradient-button(darken($vivamos-orange, 20%))
+
+  &.green
+    +gradient-button($vivamos-green)
+    border: 1px solid darken($vivamos-green, 10%)
+    &:hover 
+      +gradient-button(darken($vivamos-green, 10%))
+
+  &.teal
+    +gradient-button($vivamos-teal)
+    border: 1px solid darken($vivamos-teal, 10%)
+    &:hover 
+      +gradient-button(darken($vivamos-teal, 10%))
+
+  &.grey
+    +gradient-button($vivamos-grey)
+    border: 1px solid darken($vivamos-grey, 10%)
+    &:hover 
+      +gradient-button(darken($vivamos-grey, 10%))
+
+// image styles
+img
+  padding-bottom: 1rem
+
+    
+// Social Links
+
+.social-links
+  li
+    display: inline-block
+    padding: 0 8px 0 0
+    &.icon
+      font-size: rem-calc(20)
+        
+        
+// icons
+.feature-icon
+  font-size: rem-calc(44)
+  padding: rem-calc(40) 0 rem-calc(20) 0
+
+
+
